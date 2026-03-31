@@ -8,7 +8,7 @@ let timeLeft = 60;
 let progress = 0;
 
 const statusMessages = [
-  "正在重新分流使用者流量...",
+  "正在重新分流旅客流量...",
   "正在檢查訂票服務狀態...",
   "正在恢復付款前連線穩定度...",
   "系統持續修復中，請稍候..."
@@ -41,8 +41,8 @@ function updateWaitingPage() {
     countdownElement.textContent = "0";
     progressBar.style.width = "100%";
     progressPercent.textContent = "100%";
-    statusText.textContent = "系統已恢復部分服務，您可以再次嘗試。";
-    retryBtn.textContent = "立即重新進入";
+    statusText.textContent = "系統已恢復部分服務，您現在可以再次嘗試。";
+    retryBtn.textContent = "重新進入訂票系統";
   }
 }
 
