@@ -1,53 +1,41 @@
-const countdownElement = document.getElementById("countdown");
-const progressBar = document.getElementById("progressBar");
-const progressPercent = document.getElementById("progressPercent");
-const statusText = document.getElementById("statusText");
-const retryBtn = document.getElementById("retryBtn");
+let time = 60;
+let queue = 128;
 
-let timeLeft = 60;
-let progress = 0;
+const countdownEl = document.getElementById("countdown");
+const queueEl = document.getElementById("queue");
+const statusText = document.getElementById("statusText");
 
 const statusMessages = [
   "正在重新分流旅客流量...",
-  "正在檢查訂票服務狀態...",
-  "正在恢復付款前連線穩定度...",
-  "系統持續修復中，請稍候..."
+  "正在檢查訂票系統...",
+  "正在恢復服務穩定度..."
 ];
 
 let statusIndex = 0;
 
-function updateStatusMessage() {
-  statusIndex++;
-  if (statusIndex >= statusMessages.length) {
-    statusIndex = 0;
+const timer = setInterval(() => {
+  time--;
+  countdownEl.innerText = time;
+
+  // 模擬排隊人數下降（超加分🔥）
+  if (queue > 0) {
+    queue -= Math.floor(Math.random() * 3);
+    if (queue < 0) queue = 0;
+    queueEl.innerText = queue;
   }
-  statusText.textContent = statusMessages[statusIndex];
-}
 
-function updateWaitingPage() {
-  if (timeLeft > 0) {
-    timeLeft--;
-    countdownElement.textContent = timeLeft;
+  // 切換狀態
+  if (time % 15 === 0) {
+    statusIndex = (statusIndex + 1) % statusMessages.length;
+    statusText.innerText = statusMessages[statusIndex];
+  }
 
-    progress = Math.round(((60 - timeLeft) / 60) * 100);
-    progressBar.style.width = progress + "%";
-    progressPercent.textContent = progress + "%";
-
-    if (timeLeft % 15 === 0 && timeLeft !== 60) {
-      updateStatusMessage();
-    }
-  } else {
+  if (time <= 0) {
     clearInterval(timer);
-    countdownElement.textContent = "0";
-    progressBar.style.width = "100%";
-    progressPercent.textContent = "100%";
-    statusText.textContent = "系統已恢復部分服務，您現在可以再次嘗試。";
-    retryBtn.textContent = "重新進入訂票系統";
+    statusText.innerText = "系統已恢復，請重新嘗試";
   }
-}
+}, 1000);
 
-const timer = setInterval(updateWaitingPage, 1000);
-
-retryBtn.addEventListener("click", function () {
+document.getElementById("retryBtn").onclick = () => {
   location.reload();
-});
+};

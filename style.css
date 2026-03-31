@@ -1,322 +1,103 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: "Microsoft JhengHei", "Noto Sans TC", Arial, sans-serif;
-  min-height: 100vh;
-  background: linear-gradient(180deg, #f6f4f2 0%, #f2efec 100%);
+  font-family: "Microsoft JhengHei", sans-serif;
+  background: #f5f3f1;
+  margin: 0;
+  text-align: center;
   color: #3f3a37;
-  overflow-x: hidden;
-  position: relative;
-}
-
-.background-shape {
-  position: fixed;
-  border-radius: 50%;
-  z-index: 0;
-  opacity: 0.18;
-  filter: blur(10px);
-}
-
-.shape1 {
-  width: 260px;
-  height: 260px;
-  background: #f2a36b;
-  top: -90px;
-  left: -70px;
-}
-
-.shape2 {
-  width: 320px;
-  height: 320px;
-  background: #d5c7be;
-  right: -100px;
-  bottom: -120px;
 }
 
 .container {
-  position: relative;
-  z-index: 1;
   width: 90%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 42px 0;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 28px;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
 }
 
 .logo-circle {
-  width: 76px;
-  height: 76px;
+  background: #ea6c1f;
+  color: white;
+  padding: 10px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #d95f17, #f08b45);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  letter-spacing: 1px;
-  box-shadow: 0 10px 24px rgba(217, 95, 23, 0.22);
-  flex-shrink: 0;
+  font-weight: bold;
 }
 
 .brand-sub {
-  color: #8a7d74;
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-}
-
-.brand h1 {
-  font-size: 2rem;
-  line-height: 1.35;
-  color: #3d3530;
-  font-weight: 800;
+  font-size: 14px;
+  color: #888;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.94);
-  border-radius: 24px;
-  padding: 36px 30px;
-  box-shadow: 0 18px 42px rgba(80, 62, 49, 0.1);
-  border: 1px solid #e7dfd8;
-  backdrop-filter: blur(4px);
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-.icon-area {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.train {
-  font-size: 4rem;
-  animation: float 2.2s ease-in-out infinite;
+.icon {
+  font-size: 50px;
 }
 
 .main-message {
-  text-align: center;
-  font-size: 1.08rem;
-  line-height: 1.9;
-  color: #574d47;
-  margin-bottom: 26px;
+  margin: 20px 0;
+}
+
+.queue-box {
+  background: #fff3e8;
+  padding: 10px;
+  border-left: 5px solid #ea6c1f;
+  margin: 20px 0;
+  font-weight: bold;
 }
 
 .status-box {
-  background: #fcf4ee;
-  border-left: 6px solid #ea6c1f;
-  border-radius: 14px;
-  padding: 16px 18px;
-  margin-bottom: 28px;
-}
-
-.status-title {
-  font-size: 0.95rem;
-  color: #8c786b;
-  margin-bottom: 6px;
-}
-
-.status-text {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #b34f14;
-}
-
-.timer-section {
-  text-align: center;
-  margin-bottom: 28px;
-}
-
-.timer-label {
-  font-size: 1rem;
-  color: #8c786b;
-  margin-bottom: 10px;
-}
-
-.countdown {
-  font-size: 4rem;
-  font-weight: 800;
+  margin: 20px 0;
   color: #ea6c1f;
-  line-height: 1;
-  margin-bottom: 10px;
 }
 
-.timer-unit {
-  color: #74665d;
-  font-size: 1rem;
+.timer {
+  margin: 20px 0;
 }
 
-.progress-section {
-  margin-bottom: 30px;
-}
-
-.progress-info {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  color: #6d5f56;
-  font-weight: 700;
-}
-
-.progress-bar {
-  width: 100%;
-  height: 18px;
-  background: #e9dfd7;
-  border-radius: 999px;
-  overflow: hidden;
-}
-
-.progress {
-  width: 0%;
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #d95f17, #f09b58);
-  transition: width 0.9s ease;
+#countdown {
+  font-size: 40px;
+  color: #ea6c1f;
 }
 
 .comfort-box {
-  background: #fffaf6;
-  border: 1px solid #efd7c6;
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-
-.comfort-box h2 {
-  font-size: 1.2rem;
-  color: #b34f14;
-  margin-bottom: 12px;
-}
-
-.comfort-box ul {
-  padding-left: 22px;
-  color: #554941;
-  line-height: 1.95;
-}
-
-.comfort-box li strong {
-  color: #c25513;
+  background: #fafafa;
+  padding: 15px;
+  margin: 20px 0;
+  text-align: left;
 }
 
 .tip-box {
-  margin-top: 15px;
-  margin-bottom: 26px;
   background: #fff3e8;
-  border-left: 5px solid #ea6c1f;
-  padding: 14px 16px;
-  border-radius: 12px;
-  color: #7b5d47;
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-.action-group {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin: 20px 0;
 }
 
 button {
+  background: #ea6c1f;
+  color: white;
   border: none;
-  border-radius: 999px;
-  padding: 14px 28px;
-  font-size: 1rem;
-  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  opacity: 0.96;
+  opacity: 0.9;
 }
 
-.primary-btn {
-  background: linear-gradient(135deg, #d95f17, #ea6c1f);
-  color: white;
-  box-shadow: 0 8px 20px rgba(217, 95, 23, 0.22);
-}
-
-.primary-btn:hover {
-  box-shadow: 0 12px 24px rgba(217, 95, 23, 0.28);
-}
-
-.footer {
-  text-align: center;
+footer {
   margin-top: 20px;
-  color: #7a6b62;
-  font-size: 0.95rem;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: 92%;
-    padding: 24px 0;
-  }
-
-  .brand {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .brand h1 {
-    font-size: 1.55rem;
-  }
-
-  .card {
-    padding: 28px 20px;
-  }
-
-  .countdown {
-    font-size: 3.2rem;
-  }
-
-  .main-message {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-circle {
-    width: 64px;
-    height: 64px;
-    font-size: 0.95rem;
-  }
-
-  .brand h1 {
-    font-size: 1.35rem;
-  }
-
-  .countdown {
-    font-size: 2.8rem;
-  }
-
-  .comfort-box ul {
-    padding-left: 18px;
-  }
-
-  .card {
-    border-radius: 18px;
-  }
+  color: #777;
 }
