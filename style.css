@@ -16,7 +16,7 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 20px;
   justify-content: center;
 }
@@ -24,21 +24,37 @@ body {
 .logo-circle {
   background: #ea6c1f;
   color: white;
-  padding: 10px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .brand-sub {
-  font-size: 14px;
-  color: #888;
+  font-size: 16px;
+  color: #ea6c1f;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 4px 0;
+}
+
+.brand h1 {
+  font-size: 24px;
+  font-weight: 800;
+  color: #3f3a37;
+  margin: 0;
 }
 
 .card {
   background: white;
   padding: 30px;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .icon {
@@ -47,6 +63,7 @@ body {
 
 .main-message {
   margin: 20px 0;
+  line-height: 1.8;
 }
 
 .queue-box {
@@ -59,7 +76,18 @@ body {
 
 .status-box {
   margin: 20px 0;
+}
+
+.status-title {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+#statusText {
   color: #ea6c1f;
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .timer {
@@ -69,6 +97,12 @@ body {
 #countdown {
   font-size: 40px;
   color: #ea6c1f;
+  font-weight: bold;
+}
+
+.timer p {
+  margin-top: 8px;
+  color: #666;
 }
 
 .comfort-box {
@@ -76,12 +110,27 @@ body {
   padding: 15px;
   margin: 20px 0;
   text-align: left;
+  border-radius: 10px;
+}
+
+.comfort-box h2 {
+  margin-top: 0;
+  color: #ea6c1f;
+  font-size: 20px;
+}
+
+.comfort-box ul {
+  padding-left: 20px;
+  line-height: 1.8;
+  margin-bottom: 0;
 }
 
 .tip-box {
   background: #fff3e8;
   padding: 10px;
   margin: 20px 0;
+  border-radius: 10px;
+  line-height: 1.7;
 }
 
 button {
@@ -91,6 +140,7 @@ button {
   padding: 12px 20px;
   border-radius: 20px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 button:hover {
@@ -100,4 +150,39 @@ button:hover {
 footer {
   margin-top: 20px;
   color: #777;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 92%;
+    padding: 20px 0;
+  }
+
+  .brand {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-circle {
+    width: 52px;
+    height: 52px;
+    font-size: 16px;
+  }
+
+  .brand-sub {
+    font-size: 15px;
+  }
+
+  .brand h1 {
+    font-size: 22px;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  #countdown {
+    font-size: 34px;
+  }
 }
