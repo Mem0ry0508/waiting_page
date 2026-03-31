@@ -3,8 +3,6 @@ const progressBar = document.getElementById("progressBar");
 const progressPercent = document.getElementById("progressPercent");
 const statusText = document.getElementById("statusText");
 const retryBtn = document.getElementById("retryBtn");
-const infoBtn = document.getElementById("infoBtn");
-const tipText = document.getElementById("tipText");
 
 let timeLeft = 60;
 let progress = 0;
@@ -52,14 +50,4 @@ const timer = setInterval(updateWaitingPage, 1000);
 
 retryBtn.addEventListener("click", function () {
   location.reload();
-});
-
-infoBtn.addEventListener("click", function () {
-  tipText.classList.toggle("hidden");
-
-  if (tipText.classList.contains("hidden")) {
-    infoBtn.textContent = "查看安撫小提醒";
-  } else {
-    infoBtn.textContent = "收起提醒";
-  }
 });

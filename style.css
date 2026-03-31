@@ -184,7 +184,7 @@ body {
   border: 1px solid #d5e8fa;
   border-radius: 16px;
   padding: 20px;
-  margin-bottom: 28px;
+  margin-bottom: 20px;
 }
 
 .comfort-box h2 {
@@ -199,12 +199,28 @@ body {
   line-height: 1.9;
 }
 
+.comfort-box li strong {
+  color: #0a4d84;
+}
+
+.tip-box {
+  margin-top: 15px;
+  margin-bottom: 26px;
+  background: #fff8e6;
+  border-left: 5px solid #ffb347;
+  padding: 14px 16px;
+  border-radius: 12px;
+  color: #7a5a1c;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
 .action-group {
   display: flex;
   gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 }
 
 button {
@@ -225,25 +241,6 @@ button:hover {
   background: linear-gradient(135deg, #005bac, #008cff);
   color: white;
   box-shadow: 0 8px 20px rgba(0, 92, 172, 0.22);
-}
-
-.secondary-btn {
-  background: white;
-  color: #005bac;
-  border: 2px solid #b4d8fb;
-}
-
-.tip-text {
-  text-align: center;
-  font-size: 0.98rem;
-  color: #4d6783;
-  background: #f1f8ff;
-  border-radius: 14px;
-  padding: 14px 16px;
-}
-
-.hidden {
-  display: none;
 }
 
 .footer {
